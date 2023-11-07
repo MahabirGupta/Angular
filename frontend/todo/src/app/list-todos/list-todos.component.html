@@ -4,16 +4,21 @@
   </caption>
   <thead>
     <tr>
-      <th>id</th>
-      <th>description</th>
+      <!-- <th>id</th> -->
+      <th>Description</th>
+      <th>Target Date</th>
+      <th>Completion Status</th>
     </tr>
   </thead>
   <tbody>
     <!-- for(Todo todo:todos) -->
     <!-- Create a For loop to loop through the ToDo List -->
     <tr *ngFor="let todo of todos">
-      <td>{{ todo.id }}</td>
+      <!-- <td>{{ todo.id }}</td> -->
       <td>{{ todo.description }}</td>
+      <!-- Use pipe | to format it as a normal date -->
+      <td>{{ todo.targetDate | date | uppercase }}</td>
+      <td>{{ todo.todoStatus }}</td>
     </tr>
     <!-- } -->
   </tbody>
