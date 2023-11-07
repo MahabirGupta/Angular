@@ -1,2 +1,8 @@
-Welcome {{ name }}. Welcome to our awesome app.
-<button (click)="handleLogout()">Logout</button>
+<div>
+  Welcome {{ name }}. Welcome to our awesome app.
+  <button (click)="handleLogout()">Logout</button>
+</div>
+<div>
+  <!-- Use routerLink to go to the list-todos page -->
+  You can manage your todos <a routerLink="/todos">here</a>
+</div>
