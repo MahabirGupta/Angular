@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       // console.log('Login successful');
 
       // Redirect to welcome page
-      this.router.navigate(['welcome']); //just passing in the welcome route
+      this.router.navigate(['welcome', this.username]); //just passing in the welcome route and the username as the parameter
 
       this.successfulLogin = true;
       this.invalidLogin = false;

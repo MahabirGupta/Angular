@@ -9,7 +9,7 @@ const routes: Routes = [
   // the default path goes to the login page
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'welcome', component: WelcomeComponent },
+  { path: 'welcome/:name', component: WelcomeComponent }, //route can accept a parameter
   // Any other url route it to error page
   { path: '**', component: ErrorComponent },
 ];
