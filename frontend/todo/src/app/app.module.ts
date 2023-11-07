@@ -8,6 +8,7 @@ import { HelloComponent } from './hello/hello.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
+import { ListTodosComponent } from './list-todos/list-todos.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ErrorComponent } from './error/error.component';
     HelloComponent,
     LoginComponent,
     ErrorComponent,
+    ListTodosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

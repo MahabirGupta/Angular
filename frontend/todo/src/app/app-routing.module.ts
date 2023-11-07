@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
+import { ListTodosComponent } from './list-todos/list-todos.component';
 
 // Create a route for welcome component
 const routes: Routes = [
@@ -10,6 +11,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'welcome/:name', component: WelcomeComponent }, //route can accept a parameter
+  { path: 'todos', component: ListTodosComponent }, //route can accept a parameter
+
   // Any other url route it to error page
   { path: '**', component: ErrorComponent },
 ];
