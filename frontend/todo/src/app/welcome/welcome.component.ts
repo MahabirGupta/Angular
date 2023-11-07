@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import org.springframework.boot.SpringApplication;
 import { AppComponent } from '../app.component';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 //@ComponentScan(value='users')
 @Component({
@@ -16,10 +16,11 @@ export class WelcomeComponent implements OnInit {
   // String message = 'Some Welcome message';
   message = 'Some Welcome message';
   name = '';
+  // path = '';
 
   //public SpringBootFirstWebApplication(){}
   // Inject dependency ActivatedRoute
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   // void init(){}
   ngOnInit(): void {
@@ -28,8 +29,11 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name']; //want to pick up the name parameter
     // console.log(this.route.snapshot.params['name']);
   }
-}
 
+  handleLogout() {
+    this.router.navigate(['login']); //just passing in the welcome route and the username as the parameter
+  }
+}
 export class Books {}
 
 export class Students {}
