@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 // Create a Todo class
 export class Todo {
@@ -18,6 +19,8 @@ export class Todo {
   styleUrls: ['./list-todos.component.css'],
 })
 export class ListTodosComponent implements OnInit {
+  username = 'tiger';
+
   todos = [
     new Todo(1, 'Learning Kotlin', new Date(), false),
     new Todo(2, 'Learning Java', new Date(), false),
@@ -35,7 +38,11 @@ export class ListTodosComponent implements OnInit {
   //   id: 1,
   //   description: 'Learn Kotlin',
   // };
-  constructor() {}
+  constructor(private router: Router) {}
+
+  handleBack() {
+    this.router.navigate(['welcome', this.username]);
+  }
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');

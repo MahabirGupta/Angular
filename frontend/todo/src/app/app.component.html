@@ -305,7 +305,7 @@
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<!-- <div class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
@@ -356,12 +356,12 @@
       />
     </svg>
   </a>
-</div>
+</div> -->
 
-<div class="content" role="main">
-  <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
-    <!-- <svg
+<!-- <div class="content" role="main">
+  Highlight Card
+  <div class="card highlight-card card-small"> -->
+<!-- <svg
       id="rocket"
       xmlns="http://www.w3.org/2000/svg"
       width="101.678"
@@ -402,16 +402,17 @@
       </g>
     </svg> -->
 
-    <!-- <span>{{ title }} app is running! &nbsp;</span>
+<!-- <span>{{ title }} app is running! &nbsp;</span>
 
     <div>{{ message }}&nbsp;</div>
 
+    
     <app-welcome></app-welcome>
     <div>Component Content&nbsp;</div>
-    <app-hello></app-hello> -->
-    <!-- <app-login></app-login> -->
+    <app-hello></app-hello>
+<app-login></app-login> -->
 
-    <!-- <svg
+<!-- <svg
       id="rocket-smoke"
       xmlns="http://www.w3.org/2000/svg"
       width="516.119"
@@ -427,10 +428,10 @@
         fill="#f5f5f5"
       />
     </svg> -->
-  </div>
+<!-- </div> -->
 
-  <!-- Resources -->
-  <!-- <h2>Resources</h2>
+<!-- Resources -->
+<!-- <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
   <div class="card-container">
@@ -465,19 +466,19 @@
 
   </div> -->
 
-  <!-- Next Steps -->
-  <!-- <h2>Next Steps</h2>
+<!-- Next Steps -->
+<!-- <h2>Next Steps</h2>
   <p>What do you want to do next with your app?</p>
 
   <input type="hidden" #selection /> -->
 
-  <!-- <div class="card-container">
+<!-- <div class="card-container">
     <button
       class="card card-small"
       (click)="selection.value = 'component'"
       tabindex="0"
     > -->
-  <!-- <svg
+<!-- <svg
         class="material-icons"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -489,12 +490,12 @@
       <span>New Component</span>
     </button> -->
 
-  <!-- <button
+<!-- <button
       class="card card-small"
       (click)="selection.value = 'material'"
       tabindex="0"
     > -->
-  <!-- <svg
+<!-- <svg
         class="material-icons"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -506,7 +507,7 @@
       <span>Angular Material</span>
     </button> -->
 
-  <!-- <button
+<!-- <button
       class="card card-small"
       (click)="selection.value = 'pwa'"
       tabindex="0"
@@ -523,7 +524,7 @@
       <span>Add PWA Support</span>
     </button> -->
 
-  <!-- <button
+<!-- <button
       class="card card-small"
       (click)="selection.value = 'dependency'"
       tabindex="0"
@@ -540,7 +541,7 @@
       <span>Add Dependency</span>
     </button> -->
 
-  <!-- <button
+<!-- <button
       class="card card-small"
       (click)="selection.value = 'test'"
       tabindex="0"
@@ -557,7 +558,7 @@
       <span>Run and Watch Tests</span>
     </button> -->
 
-  <!-- <button
+<!-- <button
       class="card card-small"
       (click)="selection.value = 'build'"
       tabindex="0"
@@ -575,8 +576,8 @@
     </button>
   </div> -->
 
-  <!-- Terminal -->
-  <!-- <div class="terminal" [ngSwitch]="selection.value">
+<!-- Terminal -->
+<!-- <div class="terminal" [ngSwitch]="selection.value">
     <pre *ngSwitchDefault>ng generate component xyz</pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
     <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
@@ -585,8 +586,8 @@
     <pre *ngSwitchCase="'build'">ng build</pre>
   </div> -->
 
-  <!-- Links -->
-  <!-- <div class="card-container">
+<!-- Links -->
+<!-- <div class="card-container">
     <a
       class="circle-link"
       title="Find a Local Meetup"
@@ -634,8 +635,8 @@
     </a>
   </div> -->
 
-  <!-- Footer -->
-  <!-- <footer>
+<!-- Footer -->
+<!-- <footer>
     Love Angular?&nbsp;
     <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
       Give our repo a star.
@@ -672,7 +673,7 @@
     </a>
   </footer> -->
 
-  <svg
+<!-- <svg
     id="clouds"
     xmlns="http://www.w3.org/2000/svg"
     width="2611.084"
@@ -687,8 +688,8 @@
       transform="translate(142.69 -634.312)"
       fill="#eee"
     />
-  </svg>
-</div>
+  </svg> -->
+<!-- </div> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -698,4 +699,10 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<!-- Todo Application Header -->
+<app-menu></app-menu>
+
 <router-outlet></router-outlet>
+
+<!-- Todo Application Footer -->
+<app-footer></app-footer>
