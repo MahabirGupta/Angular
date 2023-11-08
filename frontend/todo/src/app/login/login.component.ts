@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   // set default username and password
   username = 'tiger';
-  password = ''; //password is empty
+  password = 'dummy'; //password is empty
   errorMessage = 'Invalid Credentials';
   successMessage = 'Login successfully';
   successfulLogin = false;
@@ -18,7 +19,10 @@ export class LoginComponent implements OnInit {
   // Use the instance of the router
   // Dependency injection
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private hardcodedAuthenticationService: HardcodedAuthenticationService
+  ) {
     //Don't want the router to be used outside this specific class
     //Find the router and inject it into the LoginComponent using Dependency injection and it is built-in into Angular
   }
@@ -29,9 +33,15 @@ export class LoginComponent implements OnInit {
     // console.log(this.username);
     // Not safe to display password
     // console.log(this.password);
-    if (this.username === 'tiger' && this.password === '') {
-      // console.log('Login successful');
+    // if (this.username === 'tiger' && this.password === 'dummy') {
+    // console.log('Login successful');
 
+    if (
+      this.hardcodedAuthenticationService.authenticate(
+        this.username,
+        this.password
+      )
+    ) {
       // Redirect to welcome page
       this.router.navigate(['welcome', this.username]); //just passing in the welcome route and the username as the parameter
 
