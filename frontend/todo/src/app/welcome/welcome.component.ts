@@ -30,9 +30,9 @@ export class WelcomeComponent implements OnInit {
     // console.log(this.route.snapshot.params['name']);
   }
 
-  handleLogout() {
-    this.router.navigate(['login']); //just passing in the welcome route and the username as the parameter
-  }
+  // handleLogout() {
+  //   this.router.navigate(['login']); //just passing in the welcome route and the username as the parameter
+  // }
 }
 export class Books {}
 
