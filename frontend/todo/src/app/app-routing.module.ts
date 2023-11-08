@@ -9,8 +9,8 @@ import { LogoutComponent } from './logout/logout.component';
 // Create a route for welcome component
 const routes: Routes = [
   // the default path goes to the login page
-  { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent }, //implement a RouteGuard service
+  { path: 'login', component: LoginComponent }, //Can add conditions. canActivate only on a specific condition
   { path: 'welcome/:name', component: WelcomeComponent }, //route can accept a parameter
   { path: 'todos', component: ListTodosComponent }, //route can accept a parameter
   { path: 'logout', component: LogoutComponent }, //route can accept a parameter
