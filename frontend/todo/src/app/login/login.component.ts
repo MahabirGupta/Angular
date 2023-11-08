@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private hardcodedAuthenticationService: HardcodedAuthenticationService
+    public hardcodedAuthenticationService: HardcodedAuthenticationService
   ) {
     //Don't want the router to be used outside this specific class
     //Find the router and inject it into the LoginComponent using Dependency injection and it is built-in into Angular
