@@ -25,7 +25,7 @@ export class WelcomeComponent implements OnInit {
   // void init(){}
   ngOnInit(): void {
     // COMPILATION ERROR this.message = 5;
-    console.log(this.message);
+    // console.log(this.message);
     this.name = this.route.snapshot.params['name']; //want to pick up the name parameter
     // console.log(this.route.snapshot.params['name']);
   }
@@ -33,6 +33,10 @@ export class WelcomeComponent implements OnInit {
   // handleLogout() {
   //   this.router.navigate(['login']); //just passing in the welcome route and the username as the parameter
   // }
+
+  getWelcomeMessage() {
+    console.log('get welcome message');
+  }
 }
 export class Books {}
 
