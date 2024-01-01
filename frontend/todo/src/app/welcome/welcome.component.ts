@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import org.springframework.boot.SpringApplication;
 import { AppComponent } from '../app.component';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { WelcomeDataService } from '../service/data/welcome-data.service';
 
 //@ComponentScan(value='users')
 @Component({
@@ -20,7 +21,11 @@ export class WelcomeComponent implements OnInit {
 
   //public SpringBootFirstWebApplication(){}
   // Inject dependency ActivatedRoute
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: WelcomeDataService
+  ) {}
 
   // void init(){}
   ngOnInit(): void {
@@ -35,7 +40,11 @@ export class WelcomeComponent implements OnInit {
   // }
 
   getWelcomeMessage() {
-    console.log('get welcome message');
+    console.log(this.service.executeHelloWorldBeanService());
+    // subscribe to the observable
+    this.service.executeHelloWorldBeanService().subscribe();
+
+    // console.log('get welcome message');
   }
 }
 export class Books {}
