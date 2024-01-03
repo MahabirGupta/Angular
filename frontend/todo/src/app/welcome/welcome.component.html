@@ -12,3 +12,9 @@
     Get Welcome Message
   </button>
 </div>
+<!-- Show this message only when welcomeMessage has a value -->
+<div class="container" *ngIf="welcomeMessageFromService">
+  <h2>Your Customized Welcome Message</h2>
+  <!-- message which comes back from the component -->
+  {{ welcomeMessageFromService }}
+</div>
