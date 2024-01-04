@@ -18,3 +18,10 @@
   <!-- message which comes back from the component -->
   {{ welcomeMessageFromService }}
 </div>
+
+<!-- Show this message only when an error occurs -->
+<div class="container" *ngIf="errorMessageFromService">
+  <h2>Error Message</h2>
+  <!-- message which comes back from the component -->
+  {{ errorMessageFromService }}
+</div>

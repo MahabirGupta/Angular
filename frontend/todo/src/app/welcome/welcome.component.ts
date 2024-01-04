@@ -22,6 +22,8 @@ export class WelcomeComponent implements OnInit {
   welcomeMessageFromService: string | undefined;
   name = '';
   // path = '';
+  errorMessage = 'Some error occured ';
+  errorMessageFromService: string | undefined;
 
   //public SpringBootFirstWebApplication(){}
   // Inject dependency ActivatedRoute
@@ -44,21 +46,37 @@ export class WelcomeComponent implements OnInit {
   // }
 
   getWelcomeMessage() {
-    console.log(this.service.executeHelloWorldBeanService());
+    // console.log(this.service.executeHelloWorldBeanService());
     // subscribe to the observable
     this.service.executeHelloWorldBeanService().subscribe(
       // what should we do when we get a response back
-      (response) => this.handleSuccessfulResponse(response)
+      (response) => this.handleSuccessfulResponse(response),
+      // show error message
+      (error) => this.handleErrorResponse(error)
+
       // (response) => console.log(response.message)
     );
 
-    console.log('last line of getWelcomeMessage()');
+    // console.log('last line of getWelcomeMessage()');
     // console.log('get welcome message');
   }
+  // handleErrorResponse(error: HelloWorldBean) {
+  //   this.errorMessageFromService = error.errorMessage;
+  // }
   handleSuccessfulResponse(response: HelloWorldBean) {
     this.welcomeMessageFromService = response.message;
     // console.log(response);
     // console.log(response.message);
+  }
+
+  handleErrorResponse(error: HelloWorldBean) {
+    // console.log(error);
+    // console.log(error.errorMessage);
+    // console.log(error.errorMessage);
+
+    // this.errorMessageFromService = error.errorMessage;
+    this.welcomeMessageFromService = error.message;
+    // this.welcomeMessageFromService = error.errorMessage;
   }
 }
 

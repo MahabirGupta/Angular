@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 // Define a new class
 export class HelloWorldBean {
-  constructor(public message: string) {}
+  constructor(public message: string, public errorMessage: string) {}
 }
 @Injectable({
   providedIn: 'root',
