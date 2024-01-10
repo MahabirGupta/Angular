@@ -5,6 +5,14 @@ import { HttpClient } from '@angular/common/http';
 export class HelloWorldBean {
   constructor(public message: string, public errorMessage: string) {}
 }
+
+export class HelloWorldPathVariableBean {
+  constructor(
+    public message: string,
+    public errorMessage: string,
+    public pathVariableMessage: string
+  ) {}
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -15,6 +23,16 @@ export class WelcomeDataService {
     return this.http.get<HelloWorldBean>(
       'http://localhost:8080/hello-world-bean'
     );
+  }
+
+  executeHelloWorldServiceWithPathVariable(name: string) {
+    // defining the response structure I am expecting back
+    return this.http.get<HelloWorldPathVariableBean>(
+      `http://localhost:8080/hello-world/path-variable/${name}`
+    );
+    // return this.http.get<HelloWorldBean>(
+    //   `http://localhost:8080//hello-world/path-variable/${name}`
+    // );
   }
 
   // Create a method which will retrieve the data from the backend service

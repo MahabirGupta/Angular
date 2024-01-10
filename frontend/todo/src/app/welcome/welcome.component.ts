@@ -4,6 +4,7 @@ import { AppComponent } from '../app.component';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import {
   HelloWorldBean,
+  HelloWorldPathVariableBean,
   WelcomeDataService,
 } from '../service/data/welcome-data.service';
 
@@ -24,6 +25,9 @@ export class WelcomeComponent implements OnInit {
   // path = '';
   errorMessage = 'Some error occured ';
   errorMessageFromService: string | undefined;
+
+  pathVariableMessage = 'Some Path Variable';
+  pathVariableMessageFromService: string | undefined;
 
   //public SpringBootFirstWebApplication(){}
   // Inject dependency ActivatedRoute
@@ -60,6 +64,17 @@ export class WelcomeComponent implements OnInit {
     // console.log('last line of getWelcomeMessage()');
     // console.log('get welcome message');
   }
+  getWelcomeMessageWithParameter() {
+    this.service.executeHelloWorldServiceWithPathVariable(this.name).subscribe(
+      // what should we do when we get a response back
+      // (response) => this.handleSuccessfulPathVariableResponse(response),
+      (response) => this.handleSuccessfulResponse(response)
+      // show error message
+      // (error) => this.handleErrorResponse(error)
+
+      // (response) => console.log(response.message)
+    );
+  }
   // handleErrorResponse(error: HelloWorldBean) {
   //   this.errorMessageFromService = error.errorMessage;
   // }
@@ -77,6 +92,10 @@ export class WelcomeComponent implements OnInit {
     // this.errorMessageFromService = error.errorMessage;
     this.welcomeMessageFromService = error.message;
     // this.welcomeMessageFromService = error.errorMessage;
+  }
+
+  handleSuccessfulPathVariableResponse(response: HelloWorldPathVariableBean) {
+    this.pathVariableMessage = response.pathVariableMessage;
   }
 }
 
