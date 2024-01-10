@@ -30,9 +30,6 @@ export class WelcomeDataService {
     return this.http.get<HelloWorldPathVariableBean>(
       `http://localhost:8080/hello-world/path-variable/${name}`
     );
-    // return this.http.get<HelloWorldBean>(
-    //   `http://localhost:8080//hello-world/path-variable/${name}`
-    // );
   }
 
   // Create a method which will retrieve the data from the backend service
