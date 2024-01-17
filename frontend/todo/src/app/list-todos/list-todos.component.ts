@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { TodoDataService } from '../service/data/todo-data.service';
 
 // Create a Todo class
 export class Todo {
@@ -9,7 +10,7 @@ export class Todo {
     public id: number,
     public description: string,
     public targetDate: Date,
-    public todoStatus: boolean
+    public done: boolean
   ) {}
 }
 
@@ -21,16 +22,17 @@ export class Todo {
 export class ListTodosComponent implements OnInit {
   username = 'tiger';
 
-  todos = [
-    new Todo(1, 'Learning Kotlin', new Date(), false),
-    new Todo(2, 'Learning Java', new Date(), false),
-    new Todo(3, 'Learning AWS', new Date(), false),
+  todos: Todo[] | undefined;
+  // = [
+  //   new Todo(1, 'Learning Kotlin', new Date(), false),
+  //   new Todo(2, 'Learning Java', new Date(), false),
+  //   new Todo(3, 'Learning AWS', new Date(), false),
 
-    // creating a list of todos using arrays
-    // { id: 1, description: 'Learn Kotlin' },
-    // { id: 2, description: 'Learn Java' },
-    // { id: 3, description: 'Learn AWS' },
-  ];
+  //   // creating a list of todos using arrays
+  //   // { id: 1, description: 'Learn Kotlin' },
+  //   // { id: 2, description: 'Learn Java' },
+  //   // { id: 3, description: 'Learn AWS' },
+  // ];
   // // create a todo object
   // todo = {
   //   // contents of todo
@@ -38,13 +40,21 @@ export class ListTodosComponent implements OnInit {
   //   id: 1,
   //   description: 'Learn Kotlin',
   // };
-  constructor(private router: Router) {}
+  constructor(private router: Router, private todoService: TodoDataService) {}
 
   // handleBack() {
   //   this.router.navigate(['welcome', this.username]);
   // }
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    // initialize the todos
+    this.todoService.retrieveAllTodos('Mahabir').subscribe(
+      // what should happen when get a successful response
+      (response) => {
+        console.log(response);
+        // define the method
+        this.todos = response;
+      }
+    );
   }
 }
